@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PPGConsulting.ViewModels.TitleGroup>
+
+@{
+    ViewBag.Title = "Employee Body Statistics";
+}
+
+<h2>Employee Body Statistics</h2>
+
+<table>
+    
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+        </th>
+        <th>
+            EmployeesCnt
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+ 
+            <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+            </td>
+            <td>
+                    @item.EmployeeCount
+            </td>
+        </tr>
+    }
+</table>

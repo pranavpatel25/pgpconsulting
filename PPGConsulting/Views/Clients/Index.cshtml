@@ -1,0 +1,113 @@
+﻿@model PPGConsulting.ViewModels.ClientIndexData
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+  <tr>
+    <th>
+      Client Name
+    </th>
+    <th>
+      Client Contact Name
+    </th>
+    <th>
+      On Board date
+    </th>
+    <th></th>
+  </tr>
+
+  @foreach (var client in Model.Clients)
+  {
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => client.ClientName)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => client.ClientContactName)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => client.OnBoardDate)
+      </td>
+      <td>
+        @Html.ActionLink("Select", "Index", new {id = client.ID}) |
+        @Html.ActionLink("Edit", "Edit", new {id = client.ID}) |
+        @Html.ActionLink("Details", "Details", new {id = client.ID}) |
+        @Html.ActionLink("Delete", "Delete", new {id = client.ID})
+      </td>
+    </tr>
+  }
+
+</table>
+
+
+
+<table class="table">
+  <tr>
+    <th>
+      Employee ID
+    </th>
+    <th>
+      Project ID
+    </th>
+    <th>
+      Start Date
+    </th>
+    <th>
+      End Date
+    </th>
+    <th>
+      Employee Name
+    </th>
+    <th>
+      Employee Title
+    </th>
+    <th>
+      Project Code
+    </th>
+    <th></th>
+  </tr>
+  @foreach (var proj in Model.Clients.FirstOrDefault().Projects)
+  {
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => proj.EmployeeID)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => proj.ProjectID)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => proj.StartDate)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => proj.EndDate)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => proj.Employee.FullName)  <!--You can add more employee columns here -->
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => proj.Employee.Title)
+      </td>
+
+      <td>
+        @Html.DisplayFor(modelItem => proj.Study.ProjectCode)
+      </td>
+      
+      @*<td>
+          @Html.ActionLink("Select", "Index", new {id = client.ID}) |
+          @Html.ActionLink("Edit", "Edit", new {id = client.ID}) |
+          @Html.ActionLink("Details", "Details", new {id = client.ID}) |
+          @Html.ActionLink("Delete", "Delete", new {id = client.ID})
+        </td>*@
+    </tr>
+  }
+
+</table>

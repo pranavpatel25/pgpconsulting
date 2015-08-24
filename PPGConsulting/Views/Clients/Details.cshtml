@@ -1,0 +1,42 @@
+﻿@model PPGConsulting.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientContactName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientContactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnBoardDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnBoardDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

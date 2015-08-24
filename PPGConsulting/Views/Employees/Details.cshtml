@@ -1,0 +1,75 @@
+﻿@model PPGConsulting.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstMidName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstMidName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HireDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Projects)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Project Code</th>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                </tr>
+                @foreach (var item in Model.Projects)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Study.ProjectCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

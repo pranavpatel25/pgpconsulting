@@ -18,7 +18,7 @@ namespace PPGConsulting.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            var projects = db.Projects.Include(p => p.Employee).Include(p => p.Study);
+            var projects = db.Projects.Include(p => p.ProjectEmployees);
             return View(projects.ToList());
         }
 
@@ -59,7 +59,7 @@ namespace PPGConsulting.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "LastName", project.EmployeeID);
+            //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "LastName", project.EmployeeID);
             ViewBag.StudyID = new SelectList(db.Studies, "StudyID", "ProjectCode", project.StudyID);
             return View(project);
         }
@@ -76,7 +76,7 @@ namespace PPGConsulting.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "LastName", project.EmployeeID);
+            //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "LastName", project.EmployeeID);
             ViewBag.StudyID = new SelectList(db.Studies, "StudyID", "ProjectCode", project.StudyID);
             return View(project);
         }
@@ -94,7 +94,7 @@ namespace PPGConsulting.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "LastName", project.EmployeeID);
+            //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "LastName", project.EmployeeID);
             ViewBag.StudyID = new SelectList(db.Studies, "StudyID", "ProjectCode", project.StudyID);
             return View(project);
         }

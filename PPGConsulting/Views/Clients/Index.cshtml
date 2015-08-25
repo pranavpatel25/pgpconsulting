@@ -4,7 +4,12 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<style>
+th {
+    background-color: #465661;
+    color:#ffffff;
+    }
+</style>
 <h2>Index</h2>
 
 <p>
@@ -30,7 +35,7 @@
       string selectedRow = "";
       if (client.ID == ViewBag.ClientId)
         {
-            selectedRow = "success";
+            selectedRow = "primary";
         }
     <tr class="@selectedRow">
       <td>
@@ -57,12 +62,7 @@
 
 <table class="table">
   <tr>
-      <th>
-          Employee Name
-      </th>
-      <th>
-          Employee Title
-      </th>
+    
       <th>
           Project Code
       </th>
@@ -77,32 +77,57 @@
   </tr>
   @foreach (var proj in Model.Projects)
   {
-    <tr>
+      string selectedRow = "";
+      if (proj.ProjectID == ViewBag.ProjectId)
+      {
+          selectedRow = "primary";
+      }
+
+    <tr class="@selectedRow">
         <td>
-            @Html.DisplayFor(modelItem => proj.Employee.FullName)  <!--You can add more employee columns here -->
+            @Html.ActionLink("Select", "Index", new { projectId = proj.ProjectID })
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => proj.Employee.Title)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => proj.ProjectCode)
         </td>
-         <td>
-        @Html.DisplayFor(modelItem => proj.StartDate)
-      </td>
-      <td>
-        @Html.DisplayFor(modelItem => proj.EndDate)
-      </td>
-     
-     
-      
-      @*<td>
-          @Html.ActionLink("Select", "Index", new {id = client.ID}) |
-          @Html.ActionLink("Edit", "Edit", new {id = client.ID}) |
-          @Html.ActionLink("Details", "Details", new {id = client.ID}) |
-          @Html.ActionLink("Delete", "Delete", new {id = client.ID})
-        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => proj.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => proj.EndDate)
+        </td>
+
     </tr>
   }
 
 </table>
+
+
+@if (Model.Employees != null)
+{
+    <h3>
+        Employees working on this project
+    </h3>
+    <table class="table">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+        </tr>
+        @foreach (var item in Model.Employees)
+        {
+            <tr>
+                <td>
+                    @item.FirstMidName
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+                <td>
+                    @item.Title
+                </td>
+            </tr>
+        }
+    </table>
+}

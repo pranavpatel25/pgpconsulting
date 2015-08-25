@@ -21,6 +21,7 @@ namespace PPGConsulting.DAL
         public DbSet<Study> Studies { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
+        public DbSet<ProjectEmployees> ProjectEmployees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

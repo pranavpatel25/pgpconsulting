@@ -62,64 +62,64 @@ namespace PPGConsulting.Migrations
             studies.ForEach(s => context.Studies.AddOrUpdate(p => p.ProjectCode, s));
             context.SaveChanges();
 
-            var projects = new List<Project>
-            {
-                new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Alexander").ID, 
-                    StudyID = studies.Single(c => c.ProjectCode == "TEVA1245" ).StudyID, 
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
-                },
-                 new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Alexander").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "PFIZ1245" ).StudyID, 
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
-                 },                            
-                 new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Alexander").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "TEVA1245" ).StudyID, 
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
-                 },
-                 new Project { 
-                     EmployeeID = employees.Single(s => s.LastName == "Alonso").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "SANOF1245" ).StudyID, 
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
-                 },
-                 new Project { 
-                     EmployeeID = employees.Single(s => s.LastName == "Alonso").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "MERCK1245" ).StudyID, 
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
-                 },
-                 new Project {
-                    EmployeeID = employees.Single(s => s.LastName == "Alonso").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "QUINT1245" ).StudyID, 
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15") 
-                 },
-                 new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Anand").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "TEVA1245" ).StudyID,
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
-                 },
-                 new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Anand").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "MERCK1245").StudyID,
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
-                 },
-                new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Barzdukas").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "QUINT1245").StudyID,
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
-                 },
-                 new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Li").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "ASTRA1234").StudyID,
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
-                 },
-                 new Project { 
-                    EmployeeID = employees.Single(s => s.LastName == "Justice").ID,
-                    StudyID = studies.Single(c => c.ProjectCode == "QUINT1245").StudyID,
-                    StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
-                 }
-            };
+            //var projects = new List<Project>
+            //{
+            //    new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Alexander").ID, 
+            //        StudyID = studies.Single(c => c.ProjectCode == "TEVA1245" ).StudyID, 
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
+            //    },
+            //     new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Alexander").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "PFIZ1245" ).StudyID, 
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
+            //     },                            
+            //     new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Alexander").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "TEVA1245" ).StudyID, 
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
+            //     },
+            //     new Project { 
+            //         EmployeeID = employees.Single(s => s.LastName == "Alonso").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "SANOF1245" ).StudyID, 
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
+            //     },
+            //     new Project { 
+            //         EmployeeID = employees.Single(s => s.LastName == "Alonso").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "MERCK1245" ).StudyID, 
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
+            //     },
+            //     new Project {
+            //        EmployeeID = employees.Single(s => s.LastName == "Alonso").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "QUINT1245" ).StudyID, 
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15") 
+            //     },
+            //     new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Anand").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "TEVA1245" ).StudyID,
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")
+            //     },
+            //     new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Anand").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "MERCK1245").StudyID,
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
+            //     },
+            //    new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Barzdukas").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "QUINT1245").StudyID,
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
+            //     },
+            //     new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Li").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "ASTRA1234").StudyID,
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
+            //     },
+            //     new Project { 
+            //        EmployeeID = employees.Single(s => s.LastName == "Justice").ID,
+            //        StudyID = studies.Single(c => c.ProjectCode == "QUINT1245").StudyID,
+            //        StartDate =  DateTime.Parse("2014-09-01") , EndDate =  DateTime.Parse("2014-09-15")         
+            //     }
+            //};
 
             //int i = 1;
 

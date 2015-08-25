@@ -9,30 +9,12 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Study.ProjectCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </th>
-        <th></th>
-    </tr>
-
+<table class="table" >
 @foreach (var item in Model) {
     <tr>
+       
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Study.ProjectCode)
+            @Html.DisplayFor(modelItem => item.ProjectCode)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)

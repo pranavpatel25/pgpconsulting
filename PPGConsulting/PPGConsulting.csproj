@@ -146,11 +146,24 @@
     <Compile Include="Migrations\201508250002094_addedProjCode.Designer.cs">
       <DependentUpon>201508250002094_addedProjCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508250056593_addedProjectEmployees.cs" />
+    <Compile Include="Migrations\201508250056593_addedProjectEmployees.Designer.cs">
+      <DependentUpon>201508250056593_addedProjectEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508250113209_updatedProject.cs" />
+    <Compile Include="Migrations\201508250113209_updatedProject.Designer.cs">
+      <DependentUpon>201508250113209_updatedProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508250143468_addedEmployeesInProj.cs" />
+    <Compile Include="Migrations\201508250143468_addedEmployeesInProj.Designer.cs">
+      <DependentUpon>201508250143468_addedEmployeesInProj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectEmployees.cs" />
     <Compile Include="Models\Study.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClientIndexData.cs.cs" />
@@ -159,6 +172,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomBootstrap.css" />
     <Content Include="Content\Image\cabecera1.jpg" />
     <Content Include="Content\Image\Lighthouse.jpg" />
     <Content Include="Content\PagedList.css" />
@@ -232,6 +246,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508250002094_addedProjCode.resx">
       <DependentUpon>201508250002094_addedProjCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508250056593_addedProjectEmployees.resx">
+      <DependentUpon>201508250056593_addedProjectEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508250113209_updatedProject.resx">
+      <DependentUpon>201508250113209_updatedProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508250143468_addedEmployeesInProj.resx">
+      <DependentUpon>201508250143468_addedEmployeesInProj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

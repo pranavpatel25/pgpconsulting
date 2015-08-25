@@ -8,7 +8,7 @@ namespace PPGConsulting.ViewModels
     public class ClientIndexData
     {
         public IEnumerable<Client> Clients { get; set; }
-        public IEnumerable<Study> Studies { get; set; }
+        public IEnumerable<ProjectEmployees> ProjectEmployees { get; set; }
         public IEnumerable<Project> Projects { get; set; }
         public IEnumerable<Employee> Employees { get; set; } 
     }

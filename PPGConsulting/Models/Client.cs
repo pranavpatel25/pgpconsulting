@@ -29,7 +29,7 @@ namespace PPGConsulting.Models
         [Display(Name = "OnBoard Date")]
         public DateTime OnBoardDate { get; set; }
 
-
+        
         public virtual ICollection<Project> Projects { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PPGConsulting.DAL;
 using PPGConsulting.Models;
 using PPGConsulting.ViewModels;
+using System.Diagnostics;
 
 namespace PPGConsulting.Controllers
 {
@@ -21,12 +22,15 @@ namespace PPGConsulting.Controllers
         //{
         //    return View(db.Clients.ToList());
         //}
-        public ActionResult Index(int? id, int? clientId)
+        public ActionResult Index(int? id, int? projectId)
         {
+            db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+
             var viewModel = new ClientIndexData();
             viewModel.Clients = db.Clients
                 .Include(i => i.Projects)
-                .Include(i => i.Projects.Select(c => c.Employee))
+                .Include(i => i.Projects.Select(c => c.Employees))
+                
                 .OrderBy(i => i.ID);
 
             if (id != null)
@@ -36,12 +40,12 @@ namespace PPGConsulting.Controllers
                     i => i.ID == id.Value).Single().Projects;
             }
 
-            //if (viewModel.Employee != null)
-            //{
-            //    ViewBag.CourseID = courseID.Value;
-            //    viewModel.Enrollments = viewModel.Courses.Where(
-            //        x => x.CourseID == courseID).Single().Enrollments;
-            //}
+            if (projectId != null)
+            {
+                ViewBag.ProjectId = projectId;
+                viewModel.Employees = viewModel.Projects.Where(
+                    x => x.ProjectID == projectId).Single().Employees;
+            }
 
             return View(viewModel);
         }

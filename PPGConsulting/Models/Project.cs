@@ -15,7 +15,7 @@ namespace PPGConsulting.Models
         public int ProjectID { get; set; }
         public string ProjectCode { get; set; }
         public int StudyID { get; set; }
-        public int EmployeeID { get; set; }
+        //public int EmployeeID { get; set; }
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy h:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
@@ -23,7 +23,9 @@ namespace PPGConsulting.Models
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy h:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
-        public virtual Employee Employee { get; set; }
+        //public virtual Employee Employee { get; set; }
         public virtual Study Study { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<ProjectEmployees> ProjectEmployees { get; set; }
     }
 }

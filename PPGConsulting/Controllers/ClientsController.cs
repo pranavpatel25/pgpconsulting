@@ -26,20 +26,22 @@ namespace PPGConsulting.Controllers
             var viewModel = new ClientIndexData();
             viewModel.Clients = db.Clients
                 .Include(i => i.Projects)
-                //.Include(i => i.Study.Select(c => c.EmployeeID))
+                .Include(i => i.Projects.Select(c => c.Employee))
                 .OrderBy(i => i.ID);
 
-            //if (id != null)
+            if (id != null)
+            {
+                ViewBag.ClientId = id.Value;
+                viewModel.Projects = viewModel.Clients.Where(
+                    i => i.ID == id.Value).Single().Projects;
+            }
+
+            //if (viewModel.Employee != null)
             //{
-            //    ViewBag.Client_id = id.Value;
-            //    viewModel.Projects = viewModel.Clients.Where(c => c.ID == id.Value).Single().Study;
+            //    ViewBag.CourseID = courseID.Value;
+            //    viewModel.Enrollments = viewModel.Courses.Where(
+            //        x => x.CourseID == courseID).Single().Enrollments;
             //}
-        //    if (clientId != null)
-        //    {
-        //        //ViewBag. = clientId.Value;
-        //        //viewModel.Enrollments = viewModel.Courses.Where(
-        //        //    x => x.CourseID == clientId).Single().Enrollments;
-        //    }
 
             return View(viewModel);
         }

@@ -121,18 +121,22 @@ namespace PPGConsulting.Migrations
                  }
             };
 
-            foreach (Project e in projects)
-            {
-                var ProjectInDataBase = context.Projects.Where(
-                    s =>
-                         s.Employee.ID == e.EmployeeID &&
-                         s.Study.StudyID == e.StudyID).SingleOrDefault();
-                if (ProjectInDataBase == null)
-                {
-                    context.Projects.Add(e);
-                }
-            }
-            context.SaveChanges();
+            //int i = 1;
+
+            //foreach (Project e in projects)
+            //{
+
+            //    var ProjectInDataBase = context.Projects.Where(
+            //        s =>
+            //             s.Employee.ID == e.EmployeeID &&
+            //             s.Study.StudyID == e.StudyID).SingleOrDefault();
+            //    if (ProjectInDataBase == null)
+            //    {
+            //        e.ProjectCode = "MERK" + (100 * i).ToString();
+            //        context.Projects.Add(e);
+            //    }
+            //}
+//            context.SaveChanges();
         }
     }
 }

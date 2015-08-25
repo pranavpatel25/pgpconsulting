@@ -39,13 +39,13 @@ namespace PPGConsulting.DAL
             context.SaveChanges();
             var projects = new List<Project>
             {
-            new Project{StudyID=1,EmployeeID=1,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01")},
-            new Project{StudyID=2,EmployeeID=2,StartDate=DateTime.Parse("2005-06-15"),EndDate=DateTime.Parse("2005-07-15")},
-            new Project{StudyID=3,EmployeeID=1,StartDate=DateTime.Parse("2005-06-15"),EndDate=DateTime.Parse("2005-07-15")},
-            new Project{StudyID=4,EmployeeID=3,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01")},
-            new Project{StudyID=5,EmployeeID=4,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01")},
-            new Project{StudyID=6,EmployeeID=5,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01")},
-            new Project{StudyID=7,EmployeeID=6,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01")},
+            new Project{StudyID=1,EmployeeID=1,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01"),ProjectCode="MERK347"},
+            new Project{StudyID=2,EmployeeID=2,StartDate=DateTime.Parse("2005-06-15"),EndDate=DateTime.Parse("2005-07-15"),ProjectCode="TEVA347"},
+            new Project{StudyID=3,EmployeeID=1,StartDate=DateTime.Parse("2005-06-15"),EndDate=DateTime.Parse("2005-07-15"),ProjectCode="PFIZER347"},
+            new Project{StudyID=4,EmployeeID=3,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01"),ProjectCode="MERK547"},
+            new Project{StudyID=5,EmployeeID=4,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01"),ProjectCode="ATZ347"},
+            new Project{StudyID=6,EmployeeID=5,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01"),ProjectCode="MERK947"},
+            new Project{StudyID=7,EmployeeID=6,StartDate=DateTime.Parse("2005-06-01"),EndDate=DateTime.Parse("2005-07-01"),ProjectCode="MERK147"},
             };
             projects.ForEach(s => context.Projects.Add(s));
             context.SaveChanges();

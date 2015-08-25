@@ -27,7 +27,12 @@
 
   @foreach (var client in Model.Clients)
   {
-    <tr>
+      string selectedRow = "";
+      if (client.ID == ViewBag.ClientId)
+        {
+            selectedRow = "success";
+        }
+    <tr class="@selectedRow">
       <td>
         @Html.DisplayFor(modelItem => client.ClientName)
       </td>
@@ -52,54 +57,44 @@
 
 <table class="table">
   <tr>
-    <th>
-      Employee ID
-    </th>
-    <th>
-      Project ID
-    </th>
+      <th>
+          Employee Name
+      </th>
+      <th>
+          Employee Title
+      </th>
+      <th>
+          Project Code
+      </th>
     <th>
       Start Date
     </th>
     <th>
       End Date
     </th>
-    <th>
-      Employee Name
-    </th>
-    <th>
-      Employee Title
-    </th>
-    <th>
-      Project Code
-    </th>
+  
     <th></th>
   </tr>
-  @foreach (var proj in Model.Clients.FirstOrDefault().Projects)
+  @foreach (var proj in Model.Projects)
   {
     <tr>
-      <td>
-        @Html.DisplayFor(modelItem => proj.EmployeeID)
-      </td>
-      <td>
-        @Html.DisplayFor(modelItem => proj.ProjectID)
-      </td>
-      <td>
+        <td>
+            @Html.DisplayFor(modelItem => proj.Employee.FullName)  <!--You can add more employee columns here -->
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => proj.Employee.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => proj.ProjectCode)
+        </td>
+         <td>
         @Html.DisplayFor(modelItem => proj.StartDate)
       </td>
       <td>
         @Html.DisplayFor(modelItem => proj.EndDate)
       </td>
-      <td>
-        @Html.DisplayFor(modelItem => proj.Employee.FullName)  <!--You can add more employee columns here -->
-      </td>
-      <td>
-        @Html.DisplayFor(modelItem => proj.Employee.Title)
-      </td>
-
-      <td>
-        @Html.DisplayFor(modelItem => proj.Study.ProjectCode)
-      </td>
+     
+     
       
       @*<td>
           @Html.ActionLink("Select", "Index", new {id = client.ID}) |

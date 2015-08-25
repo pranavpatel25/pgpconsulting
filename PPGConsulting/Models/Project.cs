@@ -13,6 +13,7 @@ namespace PPGConsulting.Models
         [Required]
 
         public int ProjectID { get; set; }
+        public string ProjectCode { get; set; }
         public int StudyID { get; set; }
         public int EmployeeID { get; set; }
         [DataType(DataType.DateTime)]
